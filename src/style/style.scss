@@ -53,6 +53,11 @@ html,body{
 }
 input,button,textarea{font-family:inherit;}
 
+textarea {
+  resize: none; 
+  appearance: none; 
+}
+
 input::-ms-clear{display: none;}
 button{cursor: pointer;background: transparent}
 button::-moz-focus-inner {padding:0;border:0;background: transparent}
@@ -74,8 +79,8 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 body{
 	position: relative;
     font-family: var(--font-main);
-    background-color: var(--ivory);
-    color: var(--black);
+    background-color: var(--black);
+    color: var(--white);
     min-height: 100dvh;
 }
 
@@ -83,12 +88,12 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:active,
 input:-webkit-autofill:focus {
-    background-color: var(--background-grey) !important;
-    color: var(--dark-grey) !important;
-    -webkit-box-shadow: 0 0 0 1000px var(--background-grey) inset !important;
-    -webkit-text-fill-color: var(--dark-grey) !important;
+    background-color: var(--black) !important;
+    color: var(--white) !important;
+    -webkit-box-shadow: 0 0 0 1000px var(--black) inset !important;
+    -webkit-text-fill-color: var(white) !important;
     transition: background-color 0s 600000s, color 0s 600000s;
-    caret-color: var(--dark-grey);
+    caret-color: var(white);
 }
 
 img {
@@ -110,6 +115,7 @@ body.no_scroll, body.modal_opened {
 .container {
     width: 100%;
     max-width: 1000px;
+    padding: 100px 15px;
     margin: 0 auto;
 }
 
@@ -131,14 +137,6 @@ body.no_scroll, body.modal_opened {
     &.close {
         animation: Close 0.2s forwards;
     }
-}
-
-.nocopy {
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
 }
 
 /*-------- Анимации ------*/

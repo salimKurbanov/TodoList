@@ -1,0 +1,55 @@
+@use './../../../style/common.scss';
+
+.main_button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+    flex-shrink: 0;
+    padding: 0 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    white-space: nowrap;
+    flex: 1;
+    transition: 0.4s ease;
+
+    .icon svg {
+        width: 20px;
+        height: 20px;
+        // stroke-width: 2px;
+    }
+    
+    &.white {
+        color: var(--black);
+        background: var(--white);
+        font-weight: 700;
+
+        .icon svg {
+            color: var(--black);
+        }
+    }
+    &.black {
+        color: var(--white);
+        background: var(--black);
+
+        .icon svg {
+            color: var(--white);
+        }
+    }
+    &.main_color {
+        color: var(--black);
+        background: var(--main);
+        font-weight: 700;
+
+        .icon svg {
+            color: var(--black);
+        }
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}

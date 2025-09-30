@@ -1,0 +1,41 @@
+@use './../../../style/common.scss';
+
+.icon_btn {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    border: 4px solid var(--grey);
+    border-radius: 50%;
+
+    svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    &.white {
+        background-color: var(--white);
+
+        svg {
+            color: var(--black);
+        }
+    }
+    &.black {
+        background-color: var(--black);
+
+        svg {
+            color: var(--white);
+        }
+    }
+    &.grey {
+        background-color: var(--grey);
+
+        svg {
+            color: var(--white);
+        }
+    }
+}

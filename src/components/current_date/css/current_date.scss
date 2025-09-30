@@ -1,0 +1,7 @@
+@use './../../../style/common.scss';
+
+.current_date {
+    color: var(--main);
+    margin-bottom: 10px;
+    @include common.adaptiveFont(20, 16);
+}   

@@ -1,0 +1,13 @@
+@use './../../../style/common.scss';
+
+.main_title {
+    font-weight: 500;
+    @include common.adaptiveFont(38, 28);
+
+    &.black {
+        color: var(--black);
+    }
+    &.white {
+        color: var(--white);
+    }
+}

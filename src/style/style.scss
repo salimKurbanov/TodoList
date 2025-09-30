@@ -5,17 +5,20 @@
 /*----------Переменные---------*/
 :root {
     /* === Fonts === */
-    --font-main : 'Comfortaa', sans-serif;
+    --font-main  : 'Comfortaa', sans-serif;
 
     /* === Base Colors === */
-    --black     : #0D0C10;
-    --grey      : #27262C;
-    --white     : #F9F9FB;
-    --main      : #A4EE27;
-    --red       : #FF2E2E;
+    --black      : #0D0C10;
+    --grey       : #27262C;
+    --white      : #F9F9FB;
+    --main       : #A4EE27;
+    --red        : #FF2E2E;
 
     /* === Text Colors === */
-    --font-grey : #77767C;
+    --font-grey  : #77767C;
+    
+    /* === Text Colors === */
+    --semi-black : #27262c82;
 
     /* === Shadows === */
     --shadow     : 0px 0px 16px 0px rgba(0, 0, 0, 0.25);
@@ -117,26 +120,9 @@ body.no_scroll, body.modal_opened {
     max-width: 1000px;
     padding: 100px 15px;
     margin: 0 auto;
-}
-
-.modal_wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: var(--semi-black );
-    backdrop-filter: blur(3px);
-    overflow: auto;
-    padding: 100px 16px;
-    opacity: 0;
-    animation: Open 0.5s forwards;
-    z-index: 100;
-    &.close {
-        animation: Close 0.2s forwards;
-    }
+    height: 100%;
 }
 
 /*-------- Анимации ------*/

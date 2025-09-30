@@ -9,7 +9,7 @@ export default function Button({ mode, disabled, icon, children, callback }: Typ
             onClick={disabled ? () => {} : callback}
             disabled={disabled}
         >
-            {!!icon && <div className='icon'>{icon}</div>}
+            {!!icon && <div className='btn_icon'>{icon}</div>}
             {children}
         </button>
     );

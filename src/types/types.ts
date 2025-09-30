@@ -29,3 +29,31 @@ export type TypeTextarea = {
     onFocusCallback?: React.FocusEventHandler<HTMLTextAreaElement>,
     onBlurCallback?: React.FocusEventHandler<HTMLTextAreaElement>,
 }
+
+export type TypeNoItems = {
+    icon?: React.ReactNode,
+    text?: string,
+    button?: React.ReactNode,
+    mode: string,
+}
+
+export type TypeItem = {
+    id: string
+    isDone: boolean,
+    description: string,
+}
+
+export type TypeList = {
+    list: TypeItem[],
+    addItem: (item: TypeItem) => void
+    deleteItem: (id: string) => void
+    changeItem: (id: string, value: string, name: string) => void
+}
+
+export type TypeModalLayout = {
+    maxWidth?: string,
+    classMode?: string,
+    listenerOpen: string,
+    listenerClose: string,
+    children: React.ReactNode
+}

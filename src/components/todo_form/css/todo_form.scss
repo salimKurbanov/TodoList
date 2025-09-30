@@ -1,0 +1,14 @@
+@use './../../../style/common.scss';
+
+.todo_form {
+    h3 {
+        color: var(--white);
+        font-size: 18px;
+        margin-bottom: 14px;
+    }
+
+    .main_button {
+        margin-top: 20px;
+        margin-left: auto;
+    }
+}

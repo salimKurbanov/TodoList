@@ -1,27 +1,20 @@
-import { useState } from "react"
 import CurrentDate from "./components/current_date/CurrentDate"
-import TextArea from "./components/textarea/TextArea"
+import Filter from "./components/filter/Filter"
 import Title from "./components/title/Title"
+import Modal from "./components/todo_form/Modal"
 import TodoList from "./components/todo_list/TodoList"
-import Icons from "./icons/Icons"
 
 function App() {
-    const [value, setValue] = useState<string>('')
 
   return (
     <main className="container">
         <CurrentDate />
         <Title mode="white">Мои задачи</Title>
+        <Filter />
         <TodoList />
 
-        <TextArea 
-            value={value}
-            placeholder="Описание"
-            icon={<Icons.Line name={'task_add_02'} />}
-            callback={(e) => setValue(e.target.value)}
-            mode="black"
-            error={false}
-        />
+        {/* Модальное окно добавления задачи */}
+        <Modal />
     </main>
   )
 }

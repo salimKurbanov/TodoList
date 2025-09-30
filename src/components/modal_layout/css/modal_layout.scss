@@ -1,0 +1,39 @@
+@use './../../../style/common.scss';
+
+.modal_layout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--semi-black);
+    backdrop-filter: blur(22px);
+    overflow: auto;
+    padding: 100px 15px;
+    opacity: 0;
+    animation: Open 0.5s forwards;
+    z-index: 100;
+
+    &.close {
+        animation: Close 0.2s forwards;
+    }
+
+    .modal {
+        position: relative;        
+        margin: auto;
+        padding: 20px;
+        background-color: var(--grey);
+        width: 100%;
+        opacity: 0;
+        transform: translateY(300px) scale(0);
+        border-radius: 23px;
+        &.open {
+            animation: Jump 0.5s ease forwards;
+        }
+        &.close {
+            animation: JumpOut 0.2s ease forwards;
+        }
+    }
+}

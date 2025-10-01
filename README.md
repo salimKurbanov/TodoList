@@ -1,73 +1,73 @@
-# React + TypeScript + Vite
+## Установка и запуск
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. Установите зависимости:
 
-Currently, two official plugins are available:
+    npm install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. Запустите проект в режиме разработки:
 
-## React Compiler
+    npm run dev
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Структура проекта
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+src/
+├── components/         # UI-компоненты
+│   ├── add_task_btn/   # Кнопка добавления задачи
+│   ├── button/         # Базовые кнопки
+│   ├── button_icon/    # Иконки-кнопки
+│   ├── check_box/      # Чекбокс для задач
+│   ├── current_date/   # Компонент даты
+│   ├── head/           # Заголовок + фильтры
+│   ├── no_items/       # Состояние "нет задач"
+│   ├── textarea/       # Поле ввода
+│   ├── title/          # Заголовок секции
+│   ├── todo_form/      # Форма добавления задачи (Modal)
+│   ├── todo_item/      # Отдельный элемент списка
+│   └── todo_list/      # Список задач
+│
+├── constants/          # Константы проекта
+├── hooks/              # Кастомные хуки (useTodoList и др.)
+├── icons/              # SVG-иконки
+├── store/              # Zustand store (useListStore)
+├── style/              # Стили проекта
+├── types/              # TypeScript типы
+├── utils/              # Утилиты (pluralize и др.)
+│
+├── App.tsx             # Корневой компонент
+└── main.tsx            # Точка входа
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Возможности
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    - Добавление задач
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+    - Отображение списка задач
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+    - Возможность отметить задачу как выполненную (чекбокс)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    - Удаление задач
+
+    - Фильтры: Все / Активные / Выполненные
+
+    - Сохранение задач в localStorage
+
+    - Редактирование текста задачи
+
+    - Подсчёт количества активных задач («Осталось X задач»)
+    
+---
+
+## Технологии
+
+    - React
+
+    - TypeScript
+
+    - Vite
+
+    - Zustand (управление состоянием с сохранением в localStorage)
+
+    - SCSS (стилизация компонентов)

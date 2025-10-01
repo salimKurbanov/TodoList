@@ -1,1 +1,46 @@
 @use './../../../style/common.scss';
+
+.todo_list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    
+    .todo_item {
+        display: grid;
+        grid-template-columns: 20px minmax(100px, 1fr) 74px;
+        align-items: center;
+        background-color: var(--grey);
+        border-radius: 23px;
+        padding: 20px;
+        min-height: 85px;
+        animation: OpenPage 0.3s ease forwards;
+        transition: background-color 0.3s ease;
+        @include common.adaptiveProperty(gap, 30, 15);
+
+        &.end {
+            background-color: #27262c59;
+
+            p {
+                opacity: 0.5;
+            }
+        }
+
+        .description {
+            font-size: 16px;
+            color: var(--white);
+            transition: color 0.3s ease;
+        }
+
+        .control {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+
+            .delete_btn {
+                svg {
+                    color: var(--red);
+                }
+            }
+        }
+    }
+}

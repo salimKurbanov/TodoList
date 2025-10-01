@@ -1,6 +1,7 @@
 import type { TypeItem } from "../types/types"
 import { useListStore } from "../store/useListStore"
 import { useState } from "react"
+import { setListener } from "../store/Store"
 
 export default function useTodoForm() {
     const { addItem } = useListStore()
@@ -20,11 +21,12 @@ export default function useTodoForm() {
 
         const newItem: TypeItem = {
             id: crypto.randomUUID(),
-            isDone: false,
+            isActive: true,
             description: task,
         }
 
         addItem(newItem)
+        setListener('close_task_add', true)// зыкрытие модального окна
     }
 
     // Валидация

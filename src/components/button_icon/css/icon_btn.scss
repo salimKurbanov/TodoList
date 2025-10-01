@@ -9,7 +9,6 @@
     align-items: center;
     justify-content: center;
     background-color: var(--white);
-    border: 4px solid var(--grey);
     border-radius: 50%;
 
     svg {
@@ -37,5 +36,10 @@
         svg {
             color: var(--white);
         }
+    }
+
+    &.small {
+        height: 32px;
+        width: 32px;
     }
 }

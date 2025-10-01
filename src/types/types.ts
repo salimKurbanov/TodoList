@@ -1,3 +1,8 @@
+import type { ComponentProps } from "react";
+import type Icons from "../icons/Icons";
+
+export type TypeIconsLine = ComponentProps<typeof Icons.Line>['name']
+
 export type TypeTitle = {
     children: React.ReactNode,
     mode: 'white' | 'black'
@@ -13,9 +18,15 @@ export type TypeButton = {
 
 export type TypeIconBtn = {
     mode: 'white' | 'black' | 'grey',
+    classMode?: string,
     disabled?: boolean,
     children: React.ReactNode,
     onClick?: (e: any) => void 
+}
+
+export type TypeCheckBox = {
+    isChecked?: boolean
+    callback?: React.ChangeEventHandler<HTMLInputElement>
 }
 
 export type TypeTextarea = {
@@ -39,15 +50,18 @@ export type TypeNoItems = {
 
 export type TypeItem = {
     id: string
-    isDone: boolean,
+    isActive: boolean,
     description: string,
 }
 
-export type TypeList = {
+export type TypeListStore = {
     list: TypeItem[],
+    filter: number,
     addItem: (item: TypeItem) => void
     deleteItem: (id: string) => void
     changeItem: (id: string, value: string, name: string) => void
+    setFilter: (id: number) => void
+    endItem: (id: string) => void
 }
 
 export type TypeModalLayout = {
@@ -56,4 +70,11 @@ export type TypeModalLayout = {
     listenerOpen: string,
     listenerClose: string,
     children: React.ReactNode
+}
+
+export type TypeTodoItem = {
+    item: TypeItem,
+    handleCheck: () => void,
+    handleDelete: () => void,
+    changeItem: (id: string, value: string, name: string) => void
 }

@@ -1,0 +1,48 @@
+@use './../../../style/common.scss';
+
+.check_box {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+
+    .check {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        background-color: var(--font-grey);
+        flex-shrink: 0;
+        transition: 0.4s ease;
+
+        & svg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.3s ease;
+        }
+    }
+
+    @include common.mediaMinWidth(993) {
+        &:hover {
+            .check {
+                border-color: var(--main);
+            }
+        }
+    }
+
+    &.checked {
+        .check {
+            background-color: var(--main);
+            border-color: (--main);
+
+            & svg {
+                transform: translate(-50%, -50%) scale(1);
+                color: var(--black);
+            }
+        }
+    }
+}

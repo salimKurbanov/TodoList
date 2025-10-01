@@ -13,36 +13,30 @@
 ## Структура проекта
 
 src/
-├── components/
-│   ├── add_task_btn/
-│   ├── button/
-│   ├── button_icon/
-│   ├── check_box/
-│   ├── current_date/
-│   ├── head/
-│   ├── no_items/
-│   ├── textarea/
-│   ├── title/
-│   ├── todo_form/
-│   ├── todo_item/
-│   └── todo_list/
-├── constants/
-├── hooks/
-├── icons/
-├── store/
-├── style/
-├── types/
-├── utils/
-├── App.tsx
-└── main.tsx
+ components/         # UI-компоненты
+    add_task_btn/    # Кнопка добавления задачи
+    button/          # Базовые кнопки
+    button_icon/     # Иконки-кнопки
+    check_box/       # Чекбокс для задач
+    current_date/    # Компонент даты
+    head/            # Заголовок + фильтры
+    no_items/        # Состояние "нет задач"
+    textarea/        # Поле ввода
+    title/           # Заголовок секции
+    todo_form/       # Форма добавления задачи (Modal)
+    todo_item/       # Отдельный элемент списка
+    todo_list/       # Список задач
 
-components/ — UI-компоненты (форма, список, элементы и т.п.)
+ constants/          # Константы проекта
+ hooks/              # Кастомные хуки (useTodoList и др.)
+ icons/              # SVG-иконки
+ store/              # Zustand store (useListStore)
+ style/              # Стили проекта
+ types/              # TypeScript типы
+ utils/              # Утилиты (pluralize и др.)
 
-hooks/ — кастомные хуки
-
-store/ — Zustand store
-
-utils/ — утилиты
+ App.tsx             # Корневой компонент
+ main.tsx            # Точка входа
 
 ---
 
